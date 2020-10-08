@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { CountContext } from '../contexts/CountContext'
 
-const CountProviderA: React.FC = ({ children }) => {
+const CountProvider: React.FC = ({ children }) => {
   const [count1, setCount1] = useState(0)
   const [count2, setCount2] = useState(0)
   const value = {
@@ -14,4 +14,4 @@ const CountProviderA: React.FC = ({ children }) => {
   return <CountContext.Provider value={value}>{children}</CountContext.Provider>
 }
 
-export default CountProviderA
+export default CountProvider
