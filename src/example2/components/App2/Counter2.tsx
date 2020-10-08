@@ -12,7 +12,7 @@ function useSelector(): ContextProps {
   return { count2, setCount2 }
 }
 
-const Counter2: React.FC<ContextProps> = memo(props => {
+const Counter2: React.FC<ContextProps> = props => {
   console.log(`[${Date.now()}] Count2 rendered`)
 
   const { count2, setCount2 } = props
@@ -32,6 +32,6 @@ const Counter2: React.FC<ContextProps> = memo(props => {
       <button onClick={decrement}>-</button>
     </div>
   )
-})
+}
 
-export default connect(Counter2, useSelector)
+export default connect(memo(Counter2), useSelector)
