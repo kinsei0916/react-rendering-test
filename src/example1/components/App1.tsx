@@ -1,20 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CountContextA } from '../contexts/CountContextA'
 import { CountContextB } from '../contexts/CountContextB'
 import CounterA from './CounterA'
 import CounterB from './CounterB'
 
-/**
- * CounterAを操作するとCounterBもレンダリングされてしまう
- */
 const App1: React.FC = () => {
-  const [countA, setCountA] = React.useState(0)
+  console.log(`[${Date.now()}] App1 rendered`)
+
+  const [countA, setCountA] = useState(0)
   const valueA = {
     count: countA,
     setCount: setCountA
   }
 
-  const [countB, setCountB] = React.useState(0)
+  const [countB, setCountB] = useState(0)
   const valueB = {
     count: countB,
     setCount: setCountB
@@ -23,11 +22,12 @@ const App1: React.FC = () => {
   return (
     <CountContextA.Provider value={valueA}>
       <CountContextB.Provider value={valueB}>
-        <div style={{ background: '#E1F5FE' }}>
-          <h1>App1</h1>
+        <section>
+          <h2>App1</h2>
+          <span>CounterAを操作すると、App1とCounterBも再レンダリングされてしまう</span>
           <CounterA />
           <CounterB />
-        </div>
+        </section>
       </CountContextB.Provider>
     </CountContextA.Provider>
   )

@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CountContextA } from '../contexts/CountContextA'
 
 const CountProviderA: React.FC = ({ children }) => {
-  const [countA, setCountA] = React.useState(0)
+  const [countA, setCountA] = useState(0)
   const valueA = {
     count: countA,
     setCount: setCountA

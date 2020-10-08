@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
-import { CountContextB } from '../contexts/CountContextB'
+import { CountContextA } from '../contexts/CountContextA'
 
-const CounterB: React.FC = () => {
-  console.log(`[${Date.now()}] CountB rendered`)
+const CounterA: React.FC = () => {
+  console.log(`[${Date.now()}] CountA rendered`)
 
-  const { count, setCount } = useContext(CountContextB)
+  const { count, setCount } = useContext(CountContextA)
 
   const increment = (): void => {
     setCount(count + 1)
@@ -16,11 +16,11 @@ const CounterB: React.FC = () => {
 
   return (
     <div>
-      <h2>B: {count}</h2>
+      <h3>A: {count}</h3>
       <button onClick={increment}>+</button>
       <button onClick={decrement}>-</button>
     </div>
   )
 }
 
-export default CounterB
+export default CounterA

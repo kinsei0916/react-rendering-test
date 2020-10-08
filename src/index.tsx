@@ -1,19 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import App1 from './components/App1'
-import App2 from './components/App2'
-import * as serviceWorker from './serviceWorker'
+import Example1 from './example1'
+import Example2 from './example2'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App1 />
-    <App2 />
+    <Example1 />
+    <Example2 />
   </React.StrictMode>,
   document.getElementById('root')
 )
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister()
